@@ -2,12 +2,7 @@
   controller: Main
   action: home
 
-/page:
-  controller: Page
-  action: show
-
-
-/sinscrire:
+/register:
   controller: User
   action: register
 
@@ -18,7 +13,3 @@
 /logout:
   controller: User
   action: logout
-
-/dashboard:
-  controller: Backoffice
-  action: dashboard

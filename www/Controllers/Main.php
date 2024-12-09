@@ -9,10 +9,10 @@ class Main
 
     public function home():void
     {
-        $pseudo = "Yves";
+        // $pseudo = "Yves";
         $view = new View("Main/home.php");
-        $view->addData("pseudo", $pseudo);
-        $view->addData("email", "y.skrzypczyk@gmail.com");
+        // $view->addData("pseudo", $pseudo);
+        // $view->addData("email", "y.skrzypczyk@gmail.com");
     }
 
 }

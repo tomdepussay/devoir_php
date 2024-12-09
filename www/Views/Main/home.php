@@ -1,1 +1,1 @@
-Welcome <?= $pseudo;?>
+Bienvenue sur mon site
