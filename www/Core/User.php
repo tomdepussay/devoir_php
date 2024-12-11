@@ -4,12 +4,6 @@ namespace App\Core;
 
 class User
 {
-    public function initializeSession(): void
-    {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-    }
 
     public function login(array $userData): void
     {
