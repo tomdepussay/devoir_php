@@ -1,16 +1,30 @@
 <?php
 
 namespace App\Core;
+
 class User
 {
-    public function isLogged():bool
+    public function initializeSession(): void
     {
-        return false;
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     }
 
-    public function logout():void
+    public function login(array $userData): void
     {
-        session_destroy();
+        $_SESSION['user'] = $userData;
     }
 
+    public function isLogged(): bool
+    {
+        return isset($_SESSION['user']);
+    }
+
+    public function logout(): void
+    {
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
+    }
 }
