@@ -13,15 +13,18 @@
             <li>
                 <a href="/">Accueil</a>
             </li>
-            <li>
-                <a href="register">Inscription</a>
-            </li>
-            <li>
-                <a href="login">Connexion</a>
-            </li>
-            <li>
-                <a href="logout">Déconnexion</a>
-            </li>
+            <?php if($user->isLogged()): ?>
+                <li>
+                    <a href="logout">Déconnexion</a>
+                </li>
+            <?php else: ?>
+                <li>
+                    <a href="register">Inscription</a>
+                </li>
+                <li>
+                    <a href="login">Connexion</a>
+                </li>
+            <?php endif; ?>
         </ul>
     </nav>
 

@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Core\User;
+
 class View
 {
     private string $v;
@@ -29,6 +31,7 @@ class View
 
     public function __destruct(){
         extract($this->data);
+        $user = new User();
         include "../Views/".$this->t;
     }
 

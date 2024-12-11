@@ -23,6 +23,8 @@ $countryList = [
     }
 </style>
 
+<h2>Inscription</h2>
+
 <form action="" method="post">
     <div>
         <label for="firstname">Prénom :</label>

@@ -10,6 +10,13 @@ class User
 {
     public function register(): void
     {
+        $user = new U(); 
+        
+        if($user->isLogged()){
+            header("Location: /");
+            exit;
+        }
+
         $error = [];
 
         $firstname = isset($_POST["firstname"]) ? $_POST["firstname"] : "";
@@ -108,6 +115,13 @@ class User
 
     public function login(): void
     {
+        $user = new U(); 
+        
+        if($user->isLogged()){
+            header("Location: /");
+            exit;
+        }
+
         $error = "";
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -122,7 +136,6 @@ class User
         
                 if ($userData && password_verify($password, $userData['password'])) {
                     // Création de l'instance de User pour pouvoir utiliser login()
-                    $user = new U(); 
                     $user->login([
                         "id" => $userData['id'],
                         "firstname" => $userData['firstname'],
@@ -148,8 +161,8 @@ class User
     public function logout(): void
     {
         $user = new U;
-        $user->logout(); // Déconnexion
-        header("Location: /"); // Redirection vers la page d'accueil (index.php)
+        $user->logout();
+        header("Location: /");
         exit;
     }
 }

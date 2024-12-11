@@ -21,4 +21,29 @@ class User
             session_destroy();
         }
     }
+
+    public function getUser(): array
+    {
+        return $_SESSION['user'];
+    }
+
+    public function getFirstname(): string
+    {
+        return $_SESSION['user']['firstname'];
+    }
+
+    public function getLastname(): string
+    {
+        return $_SESSION['user']['lastname'];
+    }
+
+    public function getEmail(): string
+    {
+        return $_SESSION['user']['email'];
+    }
+
+    public function getCountry(): string
+    {
+        return $_SESSION['user']['country'];
+    }
 }
